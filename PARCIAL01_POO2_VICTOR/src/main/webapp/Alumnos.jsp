@@ -53,11 +53,35 @@
                         <label for="nomb">Nombre: </label>
                         <input class="form-control" type="text" name="nomb" id="nomb"value="${nomb}" />
                     </div>
+                    <div class="form-group">
+                        <label for="nomb">Apellido: </label>
+                        <input class="form-control" type="text" name="apel" id="nomb"value="${nomb}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nomb">Fecha de nacimiento: </label>
+                        <input class="form-control" type="text" name="fech" id="nomb"value="${nomb}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nomb">Correo: </label>
+                        <input class="form-control" type="text" name="correo" id="nomb"value="${nomb}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nomb">Teléfono: </label>
+                        <input class="form-control" type="text" name="tel" id="nomb"value="${nomb}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nomb">Dirección: </label>
+                        <input class="form-control" type="text" name="direccion" id="nomb"value="${nomb}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nomb">Genero: </label>
+                        <input class="form-control" type="text" name="genero" id="nomb"value="${nomb}" />
+                    </div>
                     <div class="btn-group">
-                        <input type="submit" name="lugaAcceBton" value="Guardar" class="btn btn-default" />
-                        <input type="submit" name="lugaAcceBton" value="Consultar" class="btn btn-default" />
-                        <input type="submit" name="lugaAcceBton" value="Modificar" class="btn btn-default" />
-                        <input type="submit" name="lugaAcceBton" value="Eliminar" class="btn btn-default" />
+                        <input type="submit" name="alumBton" value="Guardar" class="btn btn-default" />
+                        <input type="submit" name="alumBton" value="Consultar" class="btn btn-default" />
+                        <input type="submit" name="alumBton" value="Modificar" class="btn btn-default" />
+                        <input type="submit" name="alumBton" value="Eliminar" class="btn btn-default" />
                     </div>
                 </div>
                 <div class="panel panel-default"style="padding: 15px;">
