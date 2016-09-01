@@ -42,69 +42,60 @@
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
           </nav>
-        <form action="TipoDocuServ" method="Post">
-             <input  type="hidden" name="codi" id="codi" value="${codi}"/>
-            <div class="container">
-                
-                
-                <div class="panel panel-default" style="padding: 15px;">
-                    <h2>CRUD Tipo de documento</h2>
-                    <div class="form-group">
-                        <label for="nomb">Nombre: </label>
-                        <input class="form-control" type="text" name="nomb" id="nomb"value="${nomb}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="nomb">Apellido: </label>
-                        <input class="form-control" type="text" name="apel" id="nomb"value="${nomb}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="nomb">Fecha de nacimiento: </label>
-                        <input class="form-control" type="text" name="fech" id="nomb"value="${nomb}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="nomb">Correo: </label>
-                        <input class="form-control" type="text" name="correo" id="nomb"value="${nomb}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="nomb">Teléfono: </label>
-                        <input class="form-control" type="text" name="tel" id="nomb"value="${nomb}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="nomb">Dirección: </label>
-                        <input class="form-control" type="text" name="direccion" id="nomb"value="${nomb}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="nomb">Genero: </label>
-                        <input class="form-control" type="text" name="genero" id="nomb"value="${nomb}" />
-                    </div>
-                    <div class="btn-group">
-                        <input type="submit" name="alumBton" value="Guardar" class="btn btn-default" />
-                        <input type="submit" name="alumBton" value="Consultar" class="btn btn-default" />
-                        <input type="submit" name="alumBton" value="Modificar" class="btn btn-default" />
-                        <input type="submit" name="alumBton" value="Eliminar" class="btn btn-default" />
-                    </div>
-                </div>
-                <div class="panel panel-default"style="padding: 15px;">
-                    <jsp:useBean id="TipoDocuCtrl" class="//com.sv.udb.controlador.TipoDocuCtrl" scope="page"/>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>                              
-                                 <th>Seleccione</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach items="${TipoDocuCtrl.ConsTodo()}" var="fila">
-                                <tr>
-                                    <td><c:out value="${fila.nombTipoDocu}"></c:out></td>                                 
-                                    <td> <input type="radio" name="codiRadi" value="${fila.codiTipoDocu}"/></td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
-                 </div>
-            </div>
-            
-        </form>
+        <form  action="AlumnosServ" class="form-horizontal style-form" method="POST">
+      <section id="main-content">          
+              <section class="wrapper">
+                  <h3><i class="fa fa-angle-right"></i>Alumnos</h3>
+
+                  <!-- BASIC FORM ELELEMNTS -->
+                  <div class="row mt">
+                      <div class="col-lg-12">
+                          <div class="form-panel">
+                                  <h4 class="mb" id="mensaje">${mensAler}</h4>
+
+                                  <div class="form-group">
+                                      <div class="col-sm-12">
+                                          <label for="nombre">Nombre: </label>
+                                            <input class="form-control" type="text" name="nombre"/>
+                                      </div>
+                                      <div class="col-sm-12">
+                                          <label for="apellido">Apellido: </label>
+                                            <input class="form-control" type="text" name="apellido"/>
+                                      </div>
+                                      <div class="col-sm-12">
+                                          <label for="fechaNacimiento">Fecha Nacimiento: </label>
+                                            <input class="form-control" type="date" name="fechaNacimiento"/>
+                                      </div>
+                                      <div class="col-sm-12">
+                                          <label for="correo">Correo electrónico: </label>
+                                            <input class="form-control" type="text" name="correo"/>
+                                      </div>
+                                      <div class="col-sm-12">
+                                          <label for="telefono">Teléfono </label>
+                                            <input class="form-control" type="text" name="telefono"/>
+                                      </div>
+                                      <div class="col-sm-12">
+                                          <label for="direccion">Dirección </label>
+                                            <input class="form-control" type="text" name="direccion"/>
+                                      </div>
+                                      <div class="col-sm-12">
+                                          <label for="genero">Género </label>
+                                          <select class="form-control" name="genero">
+                                              <option value="f">Femenino</option>
+                                              <option value="m">Masculino</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                      
+                                      
+                              <div class="col s12 center-align">
+                                  <input type="submit" name="accionBtn" value="Guardar" class="btn btn-default" />                                        
+                              </div>    
+                          </div>
+                      </div><!-- col-lg-12-->      	
+                  </div><!-- /row -->
+              </section>      
+      </section><!-- /MAIN CONTENT -->
+      </form>
     </body>
 </html>
