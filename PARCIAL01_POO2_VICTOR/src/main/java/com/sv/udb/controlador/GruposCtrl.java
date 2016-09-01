@@ -22,7 +22,7 @@ public class GruposCtrl {
     public List<Grupos>  ConsTodo()
     {
         List<Grupos> resp = new ArrayList<>();
-          EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+          EntityManagerFactory emf = Persistence.createEntityManagerFactory("PARCIALPU");
            EntityManager em = emf.createEntityManager();
         try
         {
@@ -38,7 +38,7 @@ public class GruposCtrl {
     }
     
     public static Grupos get(Integer empId){        
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PARCIALPU");
         EntityManager em = emf.createEntityManager();
         Grupos resp = null;        
         try{

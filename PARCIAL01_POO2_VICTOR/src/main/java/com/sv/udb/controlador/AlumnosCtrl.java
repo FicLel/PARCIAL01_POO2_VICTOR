@@ -137,7 +137,7 @@ public class AlumnosCtrl {
      
     public Alumnos get(Long empId){
         
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PARCIALPU");
         EntityManager em = emf.createEntityManager();
         Alumnos resp = null;
         

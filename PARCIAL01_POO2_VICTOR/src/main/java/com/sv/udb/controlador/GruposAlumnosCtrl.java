@@ -23,7 +23,7 @@ public class GruposAlumnosCtrl {
      public boolean guar(GruposAlumnos obje)
     {
         boolean resp = false;
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PARCIALPU");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
@@ -49,7 +49,7 @@ public class GruposAlumnosCtrl {
      public List<GruposAlumnos>  ConsTodo()
     {
         List<GruposAlumnos> resp = new ArrayList<>();
-          EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+          EntityManagerFactory emf = Persistence.createEntityManagerFactory("PARCIALPU");
            EntityManager em = emf.createEntityManager();
         try
         {
@@ -72,7 +72,7 @@ public class GruposAlumnosCtrl {
         public boolean modi(GruposAlumnos obje)
     {
         boolean resp = false;
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PARCIALPU");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
          GruposAlumnos lugar = null;
@@ -98,7 +98,7 @@ public class GruposAlumnosCtrl {
     public boolean elim(Long empId)
     {
         boolean resp = false;
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PARCIALPU");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();       
         tx.begin();
@@ -121,7 +121,7 @@ public class GruposAlumnosCtrl {
      
     public GruposAlumnos get(Long empId){
         
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PARCIALPU");
         EntityManager em = emf.createEntityManager();
         GruposAlumnos resp = null;
         
