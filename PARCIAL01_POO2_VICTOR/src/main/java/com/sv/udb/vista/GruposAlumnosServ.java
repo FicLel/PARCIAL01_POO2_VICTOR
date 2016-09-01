@@ -8,8 +8,8 @@ package com.sv.udb.vista;
 
 import com.sv.udb.controlador.AlumnosCtrl;
 import com.sv.udb.controlador.GruposAlumnosCtrl;
-import com.sv.udb.controlador.GruposCtrl;
 import com.sv.udb.modelo.Alumnos;
+import com.sv.udb.modelo.Grupos;
 import com.sv.udb.modelo.GruposAlumnos;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,27 +40,44 @@ public class GruposAlumnosServ extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+         try {
             boolean esValido = request.getMethod().equals("POST");
-            if(esValido)
+        if(esValido)
+        {
+            String mens = "";
+            String CRUD = request.getParameter("lugaAcceBton");
+            if(CRUD.equals("Guardar"))
             {
-                String mens = "";
-                String CRUD = request.getParameter("accionBtn");
-                if(CRUD.equals("Guardar"))
-                {
-                    GruposAlumnos obje = new GruposAlumnos();
-//                    obje.setCodiAlum(AlumnosCtrl.get(Integer.parseInt(request.getParameter("alumno"))));
-                    obje.setEstaGrupAlum('A');
-                    obje.setCodiGrup(GruposCtrl.get(Integer.parseInt(request.getParameter("grupo"))));
-                    mens = new GruposAlumnosCtrl().guar(obje) ? "Datos guardados exitosamente" : "Datos NO guardados";
-                }
-                request.setAttribute("mensAler", mens);
-                request.getRequestDispatcher("/AlumnosEnGrupos.jsp").forward(request, response);
+                
+                
+                Alumnos alum = new Alumnos(Integer.parseInt(request.getParameter("cmbAlumno")));
+                Grupos grup = new Grupos(Integer.parseInt(request.getParameter("cmbGrupo")));
+                GruposAlumnos obje = new GruposAlumnos();
+                
+                obje.setCodiAlum(alum);
+                obje.setCodiGrup(grup);
+                obje.setEstaGrupAlum('A');
+              
+                mens = new GruposAlumnosCtrl().guar(obje) ? "Datos guardados exitosamente" : "Datos NO guardados";
+                request.getRequestDispatcher("/GruposAlumnos.jsp").forward(request, response);
             }
-            else
+            else if(CRUD.equals("Alumnos"))
             {
-                response.sendRedirect(request.getContextPath() + "/AlumnosEnGrupos.jsp");
+                
+                          
+                request.setAttribute("codi", request.getParameter("cmbGrupo"));
+                request.getRequestDispatcher("/datosalumnos.jsp").forward(request, response);
             }
+           
+           
+        }
+        else
+        {
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
+        }
+        } catch (NumberFormatException | ServletException | IOException e) {
+            
+             System.out.println("ERROR:"+e.getMessage());
         }
     }
 
